@@ -404,3 +404,30 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+
+
+appsettings.development.json
+
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+out/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Icon files
+Icon?
+
+# Files that might appear on network volumes
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+
