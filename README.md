@@ -44,3 +44,4 @@
 4. Ready to go
    ```bash
    dotnet run
+5. navigate to /scalar/v1
