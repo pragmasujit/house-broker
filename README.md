@@ -13,22 +13,21 @@
 
 ## Technology Stack
 
-- **Backend:** .NET 7 / ASP.NET Core Web API
+- **Backend:** .NET 9 / ASP.NET Core Web API
 - **Architecture:** Clean Architecture, Domain-Driven Design (DDD), CQRS with MediatR
-- **Persistence:** Entity Framework Core with SQL Server (or any compatible provider)
+- **Persistence:** Entity Framework Core with SQL Server
 - **Validation:** FluentValidation, Custom Domain Validation Exceptions
-- **Testing:** xUnit, Moq for unit and integration tests
-- **Authentication:** ASP.NET Identity (can be extended as needed)
-- **Other:** AutoMapper, Specification Pattern, Logging with Microsoft.Extensions.Logging
+- **Testing:** nUnit, Moq for unit and integration tests
+- **Authentication:** ASP.NET Identity
+- **Other:** Specification Pattern, Logging with Microsoft.Extensions.Logging
 
 ## Getting Started
 
 ### Prerequisites
 
-- [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+- [.NET 9 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
 - SQL Server or any other supported database
 - IDE such as Visual Studio, Visual Studio Code, or JetBrains Rider
-- Optional: Docker for containerized setup
 
 ### Installation
 
@@ -36,4 +35,12 @@
 
    ```bash
    git clone https://github.com/pragmasujit/house-broker.git
-   cd house-broker/HouseBroker.Api
+   cd house-broker/HouseBroker
+2. Update appsettings.json DefaultConnection
+3. Update Migrations
+   ```bash
+   dotnet ef database update  --project ../HouseBroker.Infrastructure
+
+4. Ready to go
+   ```bash
+   dotnet run
