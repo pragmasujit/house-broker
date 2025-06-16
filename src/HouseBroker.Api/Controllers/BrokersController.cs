@@ -24,7 +24,8 @@ public class BrokersController : ControllerBase
     
     [HttpGet("{userId}")]
     public async Task<IActionResult> GetBroker(
-        string userId)
+        string userId
+        )
     {
         try
         {

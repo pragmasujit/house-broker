@@ -63,6 +63,8 @@ public class PropertyListing : AuditableEntity
 
         var listing = new PropertyListing
         {
+            Id = this.Id,
+            Guid = this.Guid,
             Name = name,
             CurrencyCode = currencyCode,
             Price = price,

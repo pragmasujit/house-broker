@@ -21,7 +21,7 @@ public class PropertyListingsController : ControllerBase
     }
     
     [HttpPost("filter")]
-    public async Task<IActionResult> GetPropertyListing([FromBody] GetPropertyListingsRequest request)
+    public async Task<IActionResult> GetPropertyListing([FromBody] GetPropertyListingsRequest request, CancellationToken cancellationToken)
     {
         var query = new GetPropertyListings.Query(
             Guid: request.Guid,
@@ -33,14 +33,14 @@ public class PropertyListingsController : ControllerBase
             Street: request.Street
         );
         
-        var items = await _mediator.Send(query);
+        var items = await _mediator.Send(query, cancellationToken);
         var viewModels = items.Select(x => x.ToViewModel());
         return Ok(viewModels);
     }
 
     [HttpPost]
     [Authorize(Roles = "Broker")]
-    public async Task<IActionResult> CreatePropertyListing([FromBody] CreatePropertyListingRequest request)
+    public async Task<IActionResult> CreatePropertyListing([FromBody] CreatePropertyListingRequest request, CancellationToken cancellationToken)
     {
         var command = new CreatePropertyListing.Command(
             Name: request.Name,
@@ -54,15 +54,15 @@ public class PropertyListingsController : ControllerBase
             UserId: GetUserId() 
         );
 
-        var createdId = await _mediator.Send(command);
+        var createdId = await _mediator.Send(command, cancellationToken);
         return CreatedAtAction(nameof(GetPropertyListing), new { id = createdId }, null);
     }
 
     [HttpPut("{guid}")]
     [Authorize(Roles = "Broker")]
     public async Task<IActionResult> UpdatePropertyListing(
-        Guid guid, 
-        [FromBody] UpdatePropertyListingRequest request)
+        Guid guid,
+        [FromBody] UpdatePropertyListingRequest request, CancellationToken cancellationToken)
     {
 
         var command = new UpdatePropertyListing.Command(
@@ -78,7 +78,7 @@ public class PropertyListingsController : ControllerBase
             UserId: GetUserId()
         );
 
-        await _mediator.Send(command);
+        await _mediator.Send(command, cancellationToken);
         return Ok();
     }
 
@@ -86,14 +86,15 @@ public class PropertyListingsController : ControllerBase
     [HttpDelete("{guid}")]
     [Authorize(Roles = "Broker")]
     public async Task<IActionResult> RemovePropertyListing(
-        Guid guid)
+        Guid guid, CancellationToken cancellationToken)
     {
 
         var command = new RemovePropertyListing.Command(
-            Guid: guid
+            Guid: guid,
+            UserId: GetUserId()
         );
 
-        await _mediator.Send(command);
+        await _mediator.Send(command, cancellationToken);
         return Ok();
     }
 

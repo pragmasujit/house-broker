@@ -3,6 +3,8 @@ using HouseBroker.Application.Dtos;
 using HouseBroker.Application.Extensions;
 using HouseBroker.Application.Repositories;
 using HouseBroker.Application.Specifications;
+using HouseBroker.Application.Specifications.Abstracts;
+using HouseBroker.Domain;
 using HouseBroker.Domain.Exceptions;
 using Microsoft.Extensions.Logging;
 
@@ -11,7 +13,8 @@ namespace HouseBroker.Application.Commands;
 public static class RemovePropertyListing
 {
     public record Command(
-        Guid Guid
+        Guid Guid,
+        string UserId
     ) : IRequest<PropertyListingDto>;
 
     public class Handler : IRequestHandler<Command, PropertyListingDto>
@@ -36,10 +39,13 @@ public static class RemovePropertyListing
             try
             {
                 var listings =
-                    (await _readRepository.GetAllAsync(
-                        ShouldHaveGuidSpecification.Create(request.Guid),
+                    (await _readRepository.GetAllAsync(new List<ISpecification<PropertyListing>>()
+                    {
+                        ShouldHaveGuidSpecification.Create(request.Guid),  
+                        ShouldBeCreatedBySpecification.Create(request.UserId)
+                    },
                         cancellationToken));
-
+                
                 var listing = listings.FirstOrDefault();
 
                 if (listing is null)

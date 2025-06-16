@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HouseBroker.Infrastructure.Migrations
 {
     [DbContext(typeof(HouseBrokerDbContext))]
-    [Migration("20250615163645_initasdfasdfadsfial")]
-    partial class initasdfasdfadsfial
+    [Migration("20250616000915_inital")]
+    partial class inital
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace HouseBroker.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HouseBroker.Domain.PropertyListing.PropertyListing", b =>
+            modelBuilder.Entity("HouseBroker.Domain.PropertyListing", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -215,7 +215,7 @@ namespace HouseBroker.Infrastructure.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@EXAMPLE.COM",
                             NormalizedUserName = "USER",
-                            PasswordHash = "AAQAAAAIAAYagAAAAEJ/ymT9arb6ihetqM+VwODZ1CT47Nbc6epAy5JVnl5zdmfSeSHkzoQbs7mQgMZQA/g==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEDW7vkrUrl9MHdeL1AXKqezm0vIrBu1S7dXUwgfWvnTGbks5ZMZwuwLw8vjj4NuhoQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "c206ab53-aeba-492d-91b5-611eb97bb1f6",
                             TwoFactorEnabled = false,
@@ -316,7 +316,7 @@ namespace HouseBroker.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HouseBroker.Domain.PropertyListing.PropertyListing", b =>
+            modelBuilder.Entity("HouseBroker.Domain.PropertyListing", b =>
                 {
                     b.OwnsOne("HouseBroker.Domain.ValueObjects.PropertyListingAddress", "PropertyListingAddress", b1 =>
                         {

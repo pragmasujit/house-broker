@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HouseBroker.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class inital : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -196,7 +196,7 @@ namespace HouseBroker.Infrastructure.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "c206ab53-aeba-492d-91b5-611eb97bb1f6", 0, "c206ab53-aeba-492d-91b5-611eb97bb1f6", "user@example.com", true, false, null, "USER@EXAMPLE.COM", "USER", "AQAAAAIAAYagAAAAEJxxRluLMVxPbXRU9u3/V6RItcXKcATxvQ0rGvgIHu22Uw7bSq3MnOQGhhTJzlpDhQ==", null, false, "c206ab53-aeba-492d-91b5-611eb97bb1f6", false, "user" });
+                values: new object[] { "c206ab53-aeba-492d-91b5-611eb97bb1f6", 0, "c206ab53-aeba-492d-91b5-611eb97bb1f6", "user@example.com", true, false, null, "USER@EXAMPLE.COM", "USER", "AQAAAAIAAYagAAAAEDW7vkrUrl9MHdeL1AXKqezm0vIrBu1S7dXUwgfWvnTGbks5ZMZwuwLw8vjj4NuhoQ==", null, false, "c206ab53-aeba-492d-91b5-611eb97bb1f6", false, "user" });
 
             migrationBuilder.InsertData(
                 table: "AspNetUserRoles",

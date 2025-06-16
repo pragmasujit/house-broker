@@ -3,6 +3,8 @@ using HouseBroker.Application.Dtos;
 using HouseBroker.Application.Extensions;
 using HouseBroker.Application.Repositories;
 using HouseBroker.Application.Specifications;
+using HouseBroker.Application.Specifications.Abstracts;
+using HouseBroker.Domain;
 using HouseBroker.Domain.Enums;
 using HouseBroker.Domain.Exceptions;
 using HouseBroker.Domain.ValueObjects;
@@ -47,7 +49,12 @@ public static class UpdatePropertyListing
             try
             {
                 var listings =
-                    (await _readRepository.GetAllAsync(ShouldHaveGuidSpecification.Create(request.Guid),
+                    (await _readRepository.GetAllAsync(
+                        new List<ISpecification<PropertyListing>>()
+                        {
+                            ShouldHaveGuidSpecification.Create(request.Guid),
+                            ShouldBeCreatedBySpecification.Create(request.UserId)  
+                        },
                         cancellationToken));
                 var listing = listings.FirstOrDefault();
 

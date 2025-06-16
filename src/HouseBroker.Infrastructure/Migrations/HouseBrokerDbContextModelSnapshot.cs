@@ -22,7 +22,7 @@ namespace HouseBroker.Infrastructure.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("HouseBroker.Domain.PropertyListing.PropertyListing", b =>
+            modelBuilder.Entity("HouseBroker.Domain.PropertyListing", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -313,7 +313,7 @@ namespace HouseBroker.Infrastructure.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("HouseBroker.Domain.PropertyListing.PropertyListing", b =>
+            modelBuilder.Entity("HouseBroker.Domain.PropertyListing", b =>
                 {
                     b.OwnsOne("HouseBroker.Domain.ValueObjects.PropertyListingAddress", "PropertyListingAddress", b1 =>
                         {

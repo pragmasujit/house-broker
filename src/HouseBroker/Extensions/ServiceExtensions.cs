@@ -3,7 +3,6 @@ using HouseBroker.Application.Repositories;
 using HouseBroker.Infrastructure.Data;
 using HouseBroker.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.CookiePolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
