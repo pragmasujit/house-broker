@@ -1,3 +1,4 @@
+using HouseBroker.Domain.Enums;
 using HouseBroker.Domain.Misc.Isos;
 
 namespace HouseBroker.Api.ViewModels;
@@ -8,7 +9,8 @@ public sealed record PropertyListingViewModel(
     decimal Price,
     string CurrencyCode,
     DateTime CreatedAt,
-    string CreatedBy
+    string CreatedBy,
+    string PropertyTypeName
 )
 {
     public string CurrencySymbol { get; init; } =

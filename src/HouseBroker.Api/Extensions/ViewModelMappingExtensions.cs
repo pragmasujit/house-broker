@@ -13,7 +13,8 @@ public static class ViewModelMappingExtensions
             Price: dto.Price,
             CurrencyCode: dto.CurrencyCode,
             CreatedAt: dto.CreatedAt,
-            CreatedBy: dto.CreatedBy
+            CreatedBy: dto.CreatedBy,
+            PropertyTypeName: dto.PropertyType.ToString()
         );
     }
 }
