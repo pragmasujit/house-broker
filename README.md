@@ -44,4 +44,5 @@
 4. Ready to go
    ```bash
    dotnet run
-5. navigate to /scalar/v1
+5. Navigate to /scalar/v1
+6. Data seeds work out of the box. Defaut user with broker permission - user - User@123
