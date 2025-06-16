@@ -1,4 +1,3 @@
-using System;
 using System.Linq.Expressions;
 using HouseBroker.Application.Specifications.Abstracts;
 using HouseBroker.Domain;

@@ -4,6 +4,7 @@ using HouseBroker.Application.Specifications;
 using HouseBroker.Application.Specifications.Abstracts;
 using HouseBroker.Domain;
 using HouseBroker.Domain.Enums;
+using HouseBroker.Domain.Misc.Isos;
 using HouseBroker.Domain.ValueObjects;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -42,7 +43,7 @@ namespace HouseBroker.Application.Tests.Commands
 
             var listing = PropertyListing.Create(
                 name: "name",
-                currencyCode: "USD",
+                currencyCode: IsoCurrencies.UnitedStatesDollar.Code,
                 price: 123m,
                 propertyType: PropertyType.Apartment,
                 imageUrls: new List<string> { "https://asfas/image.asdfasdf", "https://asfas/imasdfsdfge.asdfasdf" },

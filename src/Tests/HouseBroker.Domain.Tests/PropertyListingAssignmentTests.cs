@@ -1,4 +1,5 @@
 using HouseBroker.Domain.Enums;
+using HouseBroker.Domain.Misc.Isos;
 using HouseBroker.Domain.ValueObjects;
 
 namespace HouseBroker.Domain.Tests
@@ -14,7 +15,7 @@ namespace HouseBroker.Domain.Tests
         {
             var listing = PropertyListing.Create(
                 name: "Test Property",
-                currencyCode: "USD",
+                currencyCode: IsoCurrencies.UnitedStatesDollar.Code,
                 price: 100000m,
                 propertyType: PropertyType.House,
                 imageUrls: _imageUrls,

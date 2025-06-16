@@ -4,6 +4,7 @@ using HouseBroker.Application.Repositories;
 using HouseBroker.Application.Specifications.Abstracts;
 using HouseBroker.Domain;
 using HouseBroker.Domain.Enums;
+using HouseBroker.Domain.Misc.Isos;
 using HouseBroker.Domain.ValueObjects;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -35,7 +36,7 @@ namespace HouseBroker.Application.Tests.Commands
             => new UpdatePropertyListing.Command(
                 Guid: guid,
                 Name: "Updated Property",
-                CurrencyCode: "USD",
+                CurrencyCode: IsoCurrencies.UnitedStatesDollar.Code,
                 Price: 1000m,
                 PropertyType: PropertyType.Apartment,
                 ImageUrls: new List<string> { "https://image1.jpg", "https://image2.jpg" },
@@ -50,7 +51,7 @@ namespace HouseBroker.Application.Tests.Commands
 
             var listing = PropertyListing.Create(
                 name: "Initial Property",
-                currencyCode: "USD",
+                currencyCode: IsoCurrencies.UnitedStatesDollar.Code,
                 price: 500m,
                 propertyType: PropertyType.Apartment,
                 imageUrls: new List<string> { "https://oldimage.jpg" },

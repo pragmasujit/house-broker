@@ -1,5 +1,6 @@
 using HouseBroker.Domain.Enums;
 using HouseBroker.Domain.Exceptions;
+using HouseBroker.Domain.Misc.Isos;
 using HouseBroker.Domain.ValueObjects;
 
 namespace HouseBroker.Domain.Tests;
@@ -32,7 +33,7 @@ public class UpdatePropertyListingAddressTests
     {
         _original = PropertyListing.Create(
             name: "Initial",
-            currencyCode: "USD",
+            currencyCode: IsoCurrencies.UnitedStatesDollar.Code,
             price: 50000,
             propertyType: PropertyType.House,
             imageUrls: new List<string> { "https://img.com/initial.jpg" },
@@ -45,7 +46,7 @@ public class UpdatePropertyListingAddressTests
         );
 
         _name = "Updated Name";
-        _currencyCode = "USD";
+        _currencyCode = IsoCurrencies.UnitedStatesDollar.Code;
         _price = 100000;
         _propertyType = PropertyType.Apartment;
         _imageUrls = new List<string> { "https://img.com/1.jpg" };

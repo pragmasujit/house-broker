@@ -2,6 +2,7 @@ using Api.Shared.Exceptions;
 using HouseBroker.Application.Commands;
 using HouseBroker.Application.Repositories;
 using HouseBroker.Domain.Enums;
+using HouseBroker.Domain.Misc.Isos;
 using Moq;
 using Microsoft.Extensions.Logging;
 
@@ -28,7 +29,7 @@ namespace HouseBroker.Application.Tests.Commands
             // Arrange
             var command = new CreatePropertyListing.Command(
                 Name: "asdfasdf",
-                CurrencyCode: "USD",
+                CurrencyCode: IsoCurrencies.UnitedStatesDollar.Code,
                 Price: -10,
                 PropertyType: PropertyType.House,
                 ImageUrls: new List<string>(),

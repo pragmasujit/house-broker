@@ -31,6 +31,7 @@ public class PropertyListing : AuditableEntity
 
         var propertyListing = new PropertyListing
         {
+            Guid = Guid.NewGuid(),
             CreatedBy = createdBy,
             Name = name,
             CurrencyCode = currencyCode,
