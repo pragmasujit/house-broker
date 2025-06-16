@@ -4,9 +4,8 @@
 
 ## Features
 
-- Create and manage property listings with detailed attributes (title, price, currency, property type, images, address, etc.)
+- Create and manage property listings with detailed attributes (name, price, currency, property type, images, address, etc.)
 - Domain-driven design ensuring business rules and validation at the core
-- Support for multiple property types and flexible pricing
 - API endpoints for listing retrieval, filtering, and CRUD operations
 - Clean separation of concerns via layered architecture (Domain, Application, Infrastructure, API)
 - Secure and scalable with ASP.NET Core and Entity Framework Core
@@ -17,7 +16,7 @@
 - **Architecture:** Clean Architecture, Domain-Driven Design (DDD), CQRS with MediatR
 - **Persistence:** Entity Framework Core with SQL Server
 - **Validation:** FluentValidation, Custom Domain Validation Exceptions
-- **Testing:** nUnit, Moq for unit and integration tests
+- **Testing:** nUnit, Moq for unit testings
 - **Authentication:** ASP.NET Identity
 - **Other:** Specification Pattern, Logging with Microsoft.Extensions.Logging
 
